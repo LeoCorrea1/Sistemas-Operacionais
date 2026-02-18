@@ -1,49 +1,47 @@
-Anotações simples – Sistemas Operacionais
+# 📌 Anotações – Sistemas Operacionais
 
-*Sistema Operacional (SO):* programa entre o hardware e o usuário
+## 📖 Conceito
+- **Sistema Operacional (SO)**: programa que fica entre o hardware e o usuário  
+- Facilita o uso do computador  
+- Garante o uso eficiente do hardware  
 
-Facilita o uso do computador
+## ⚙️ Funções do Sistema Operacional
+- Alocação de recursos:
+  - CPU
+  - Memória
+  - Disco
+  - Dispositivos de entrada e saída (I/O)
+- Controle da execução dos programas
+- Prevenção de erros e uso indevido do hardware
 
-Usa o hardware de forma eficiente
+## 🧠 Kernel
+- Parte central do Sistema Operacional  
+- Está sempre em execução  
 
-*Funções do SO:*
+## 👤 Visões do Sistema
+- **Visão do usuário**:
+  - Facilidade de uso
+  - Bom desempenho
+- **Visão do sistema**:
+  - Gerenciamento eficiente dos recursos
 
-Alocar recursos (CPU, memória, disco, I/O)
+## 🕰️ Evolução / Tipos de Sistemas
+- **Sistemas em lote (Batch)**:
+  - Sem interação com o usuário
+- **Sistemas multiprogramados**:
+  - Vários programas na memória ao mesmo tempo
+- **Sistemas de tempo compartilhado**:
+  - Vários usuários usando o sistema simultaneamente
+- **Computadores pessoais**:
+  - Monousuário ou multiusuário
+  - Monotarefa ou multitarefa
+- **Sistemas paralelos**:
+  - Uso de vários processadores
+- **Sistemas distribuídos**:
+  - Computadores interligados por rede
+- **Sistemas de tempo real**:
+  - Respostas dentro de tempo definido
 
-Controlar a execução dos programas
-
-Evitar erros e uso indevido do hardware
-
-*Kernel:*
-
-Parte principal do SO
-
-Fica sempre em execução
-
-Visão do usuário:
-
-Facilidade de uso
-
-Bom desempenho
-
-*Tipos de sistemas (histórico):*
-
-*Sistemas em lote (batch):* sem interação com o usuário
-
-*Sistemas multiprogramados:* vários programas na memória
-
-*Tempo compartilhado:* vários usuários ao mesmo tempo
-
-*Computadores pessoais:* monousuário ou multiusuário
-
-*Sistemas paralelos:* vários processadores
-
-*Sistemas distribuídos:* computadores em rede
-
-*Sistemas de tempo real:* resposta dentro de tempo definido
-
-*Objetivo do SO:*
-
-Executar programas
-
-Gerenciar recursos de forma correta e eficiente
+## 🎯 Objetivo do Sistema Operacional
+- Executar programas do usuário
+- Gerenciar os recursos do computador de forma correta e eficiente
