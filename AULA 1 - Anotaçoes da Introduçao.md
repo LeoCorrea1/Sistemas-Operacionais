@@ -1,47 +1,40 @@
-# 📌 Anotações – Sistemas Operacionais
+# Anotações – Sistemas Operacionais
 
-## 📖 Conceito
-- **Sistema Operacional (SO)**: programa que fica entre o hardware e o usuário  
-- Facilita o uso do computador  
-- Garante o uso eficiente do hardware  
+## Conceito
+- Sistema Operacional (SO): programa que faz a ligação entre o hardware e o usuário
+- Facilita o uso do computador
+- Utiliza o hardware de forma eficiente
 
-## ⚙️ Funções do Sistema Operacional
-- Alocação de recursos:
+## Funções do Sistema Operacional
+- Gerenciar recursos:
   - CPU
   - Memória
   - Disco
-  - Dispositivos de entrada e saída (I/O)
-- Controle da execução dos programas
-- Prevenção de erros e uso indevido do hardware
+  - Entrada e saída (I/O)
+- Controlar a execução dos programas
+- Evitar erros e uso incorreto do hardware
 
-## 🧠 Kernel
-- Parte central do Sistema Operacional  
-- Está sempre em execução  
+## Kernel
+- Parte principal do Sistema Operacional
+- Fica sempre em execução
 
-## 👤 Visões do Sistema
-- **Visão do usuário**:
-  - Facilidade de uso
-  - Bom desempenho
-- **Visão do sistema**:
-  - Gerenciamento eficiente dos recursos
-
-## 🕰️ Evolução / Tipos de Sistemas
-- **Sistemas em lote (Batch)**:
-  - Sem interação com o usuário
-- **Sistemas multiprogramados**:
-  - Vários programas na memória ao mesmo tempo
-- **Sistemas de tempo compartilhado**:
-  - Vários usuários usando o sistema simultaneamente
-- **Computadores pessoais**:
+## Tipos de Sistemas
+- Sistemas em lote (batch)
+  - Não há interação com o usuário
+- Sistemas multiprogramados
+  - Vários programas na memória
+- Sistemas de tempo compartilhado
+  - Vários usuários ao mesmo tempo
+- Computadores pessoais
   - Monousuário ou multiusuário
   - Monotarefa ou multitarefa
-- **Sistemas paralelos**:
-  - Uso de vários processadores
-- **Sistemas distribuídos**:
-  - Computadores interligados por rede
-- **Sistemas de tempo real**:
-  - Respostas dentro de tempo definido
+- Sistemas paralelos
+  - Vários processadores
+- Sistemas distribuídos
+  - Computadores conectados em rede
+- Sistemas de tempo real
+  - Resposta dentro de tempo definido
 
-## 🎯 Objetivo do Sistema Operacional
+## Objetivo do Sistema Operacional
 - Executar programas do usuário
-- Gerenciar os recursos do computador de forma correta e eficiente
+- Gerenciar os recursos do sistema de forma eficiente
