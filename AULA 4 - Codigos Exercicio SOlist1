@@ -46,7 +46,7 @@ int main()
     printf("Processo Pai PID = %d\n", getpid());
 
     for (int i = 0; i < 50; i++) {
-        sleep(0);
+        sleep(2);
         printf("Pai: %d\n", i);
     }
 
@@ -59,7 +59,7 @@ int main()
         printf("Filho 1 PID = %d\n", getpid());
 
         for (int i = 100; i < 200; i++) {
-            sleep(0);
+            sleep(1);
             printf("Filho 1: %d\n", i);
         }
 
@@ -72,7 +72,7 @@ int main()
             printf("Filho 2 PID = %d\n", getpid());
 
             for (int i = 250; i < 350; i++) {
-                sleep(0);
+                sleep(1);
                 printf("Filho 2: %d\n", i);
             }
 
