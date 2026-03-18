@@ -31,4 +31,97 @@ int main()
         return 1;
     }
 }
+EXERCICIO 2 )
 
+EXERCICIO 3 ) 
+
+#include <sys/types.h>
+#include <unistd.h>
+#include <stdio.h>
+
+int main()
+{
+    pid_t f1;
+
+    printf("Processo Pai PID = %d\n", getpid());
+
+    for (int i = 0; i < 50; i++) {
+        sleep(0);
+        printf("Pai: %d\n", i);
+    }
+
+    printf("Processo Pai Terminou\n");
+
+    f1 = fork();
+
+    if (f1 == 0) {
+      
+        printf("Filho 1 PID = %d\n", getpid());
+
+        for (int i = 100; i < 200; i++) {
+            sleep(0);
+            printf("Filho 1: %d\n", i);
+        }
+
+        printf("Processo Filho 1 Terminou\n");
+
+        pid_t f2 = fork();
+
+        if (f2 == 0) {
+            
+            printf("Filho 2 PID = %d\n", getpid());
+
+            for (int i = 250; i < 350; i++) {
+                sleep(0);
+                printf("Filho 2: %d\n", i);
+            }
+
+            printf("Processo Filho 2 Terminou\n");
+        }
+    }
+
+    return 0;
+}
+
+EXERCICIO 4 ) 
+
+#include <sys/types.h>
+#include <unistd.h>
+#include <stdio.h>
+
+int main()
+{
+    pid_t f1, f4;
+
+    printf("Processo Pai PID = %d\n", getpid());
+    f1 = fork();
+
+    if (f1 == 0) {
+    
+        printf("Filho 1 PID = %d\n", getpid());
+
+        pid_t f2 = fork();
+        if (f2 == 0) {
+       
+            printf("Filho 2 PID = %d\n", getpid());
+
+            pid_t f3 = fork();
+            if (f3 == 0) {
+                printf("Filho 3 PID = %d\n", getpid());
+            }
+        }
+    } else {
+        f4 = fork();
+
+        if (f4 == 0) {
+            printf("Filho 4 PID = %d\n", getpid());
+
+            pid_t f5 = fork();
+            if (f5 == 0) {
+                printf("Filho 5 PID = %d\n", getpid());
+            }
+        }
+    }
+
+    return 0;
+}
