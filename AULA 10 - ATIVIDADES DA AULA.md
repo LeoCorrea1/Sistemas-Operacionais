@@ -94,5 +94,7 @@ void writer(void) {
         up(&db);             /* Libera o acesso exclusivo */
     }
 }
+
+```
 ###  O Problema do Starvation (Inanição)
 A solução acima prioriza os leitores. Se houver um fluxo constante de novos leitores entrando antes que os antigos saiam, o contador rc nunca chegará a zero. Consequentemente, o Escritor nunca conseguirá dar o down(&db) e ficará bloqueado indefinidamente na fila. Isso é chamado de Starvation.
