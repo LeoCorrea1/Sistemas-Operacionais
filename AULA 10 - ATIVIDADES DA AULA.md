@@ -1,9 +1,3 @@
-# Exercícios de Sistemas Operacionais: Concorrência e Sincronização
-
-Este documento apresenta resoluções de questões sobre processos concorrentes, condições de corrida e o clássico problema dos Leitores e Escritores, baseado na literatura de Tanenbaum.
-
----
-
 ## Questão 1: Concorrência e Variáveis Compartilhadas
 
 Considere dois processos que acessam uma variável compartilhada `cont = 5`.
