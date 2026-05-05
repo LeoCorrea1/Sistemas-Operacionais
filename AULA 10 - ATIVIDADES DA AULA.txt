@@ -1,0 +1,88 @@
+Questão 1: Concorrência e Variáveis Compartilhadas
+
+Considere dois processos que acessam uma variável compartilhada cont = 5.
+
+Processo A: cont = cont + 1
+Processo B: cont = cont - 1
+
+Ambos executam concorrentemente.
+
+a) Qual deveria ser o valor final?
+O resultado ideal deveria ser 5. Como uma operação incrementa e a outra decrementa o mesmo valor, se executadas de forma atômica ou sequencial, o estado final deve ser igual ao estado inicial.
+
+b) Possível execução com valor incorreto (Condição de Corrida)
+Se ocorrer uma condição de corrida (race condition), um processo pode ser interrompido pelo escalonador antes de completar todas as etapas da operação (Leitura -> Modificação -> Escrita).
+
+Exemplo de cenário problemático:
+
+Processo A lê o valor de cont (5).
+O sistema interrompe o Processo A e troca para o Processo B.
+Processo B lê o valor de cont (5), subtrai 1 e salva o resultado: cont = 4.
+O sistema volta para o Processo A.
+Processo A, que já tinha o valor 5 guardado, soma 1 e salva: cont = 6.
+
+Resultado: O trabalho do Processo B foi perdido, resultando em um valor final incorreto.
+
+Questão 2: Seção Crítica
+
+Dado o código: saldo = saldo - valor;
+
+Esse trecho é uma seção crítica? Por quê?
+Sim. É uma seção crítica porque acessa e modifica um recurso compartilhado (saldo). Essa operação não é atômica; envolve leitura, cálculo e escrita. Se múltiplos processos executarem ao mesmo tempo sem controle, pode haver erro.
+O que pode acontecer se dois processos executarem isso ao mesmo tempo?
+Pode ocorrer uma condição de corrida, levando a um saldo incorreto. Por exemplo, dois saques simultâneos podem usar o mesmo saldo inicial e gerar um resultado errado.
+
+Questão 3: Problema dos Leitores e Escritores
+
+Dilema:
+Permitir leitura simultânea (vários leitores), mas garantir exclusividade total para escrita.
+Leitores podem acessar juntos.
+Escritor precisa de acesso exclusivo.
+
+Implementação em C (Semáforos):
+
+typedef int semaphore;
+semaphore mutex = 1;
+semaphore db = 1;
+int rc = 0;
+
+void reader(void) {
+while (TRUE) {
+down(&mutex);
+rc = rc + 1;
+
+    if (rc == 1) {
+        down(&db);
+    }
+
+    up(&mutex);
+
+    read_data_base();
+
+    down(&mutex);
+    rc = rc - 1;
+
+    if (rc == 0) {
+        up(&db);
+    }
+
+    up(&mutex);
+
+    use_data_read();
+}
+
+}
+
+void writer(void) {
+while (TRUE) {
+think_up_data();
+
+    down(&db);
+    write_data_base();
+    up(&db);
+}
+
+}
+
+Problema do Starvation (Inanição):
+Essa solução prioriza os leitores. Se novos leitores continuarem chegando antes dos atuais saírem, rc nunca será zero. Assim, o escritor pode ficar bloqueado indefinidamente, sem conseguir acesso ao recurso.
