@@ -58,8 +58,8 @@ public class Fila {
             }
         }
         
-        System.out.println("Jogadores pareados: "+jogador1.getNickname()+" "+jogador1.getId()+
-                           " - "+ jogador2.getNickname()+" "+jogador2.getId());
+        System.out.println("Jogadores pareados: "+jogador1.getNickname()+" ID :"+jogador1.getId()+
+                           " - "+ jogador2.getNickname()+" ID: "+jogador2.getId());
         System.out.println("Partida Iniciada !");
         
         pode[j] = true;
